@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
     <head>
-        <!-- Title and Icon -->
+        <!-- タイトルとアイコン -->
 
-        <title id="clientTitle">MiroTalk WebRTC Video call, Chat Room & Screen Sharing.</title>
+        <title id="clientTitle">MiroTalk WebRTC ビデオ通話、チャットルーム、画面共有。</title>
         <link id="icon" rel="shortcut icon" href="../images/logo.svg" />
         <link id="appleTouchIcon" rel="apple-touch-icon" href="../images/logo.svg" />
 
-        <!-- Meta Information -->
+        <!-- メタ情報 -->
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta
@@ -16,25 +16,25 @@
         />
         <meta
             name="description"
-            content="MiroTalk powered by WebRTC, Real-time Simple Secure Fast video calls, chat and screen sharing capabilities in the browser, from your mobile or desktop."
+            content="WebRTCを搭載したMiroTalkは、シンプルで安全、高速なリアルタイムビデオ通話、チャット、画面共有機能をブラウザ、モバイル、デスクトップで提供します。"
         />
         <meta
             name="keywords"
-            content="webrtc, openAI, chatGPT, webrtc stun, webrtc turn, video meeting, video chat, multi video chat, peer to peer, p2p, zoom"
+            content="webrtc, openAI, chatGPT, webrtc stun, webrtc turn, ビデオ会議, ビデオチャット, マルチビデオチャット, ピアツーピア, p2p, zoom"
         />
 
         <!-- https://ogp.me -->
 
-        <meta property="og:type" content="{{OG_TYPE}}" />
-        <meta property="og:site_name" content="{{OG_SITE_NAME}}" />
-        <meta property="og:title" content="{{OG_TITLE}}" />
-        <meta property="og:description" content="{{OG_DESCRIPTION}}" />
-        <meta property="og:image" content="{{OG_IMAGE}}" />
-        <meta property="og:url" content="{{OG_URL}}" />
+        <meta property="og:type" content="{{OG_TYPE}}" /> <!-- OGタイプ -->
+        <meta property="og:site_name" content="{{OG_SITE_NAME}}" /> <!-- OGサイト名 -->
+        <meta property="og:title" content="{{OG_TITLE}}" /> <!-- OGタイトル -->
+        <meta property="og:description" content="{{OG_DESCRIPTION}}" /> <!-- OG説明 -->
+        <meta property="og:image" content="{{OG_IMAGE}}" /> <!-- OG画像 -->
+        <meta property="og:url" content="{{OG_URL}}" /> <!-- OG URL -->
 
         <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
 
-        <!-- StyleSheet -->
+        <!-- スタイルシート -->
 
         <link rel="stylesheet" href="../css/client.css" />
         <link rel="stylesheet" href="../css/videoGrid.css" />
@@ -44,7 +44,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-        <!-- https://animate.style 4 using for swal fadeIn-Out -->
+        <!-- https://animate.style 4 swalのfadeIn-Outに使用 -->
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -55,11 +55,11 @@
 
         <!--  pickr  https://github.com/simonwep/pickr -->
 
-        <!-- 'classic' theme -->
+        <!-- 'classic' テーマ -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
-        <!-- 'monolith' theme -->
+        <!-- 'monolith' テーマ -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" />
-        <!-- 'nano' theme -->
+        <!-- 'nano' テーマ -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
 
         <!-- Highlight  https://github.com/highlightjs/highlight.js -->
@@ -75,36 +75,36 @@
     </head>
 
     <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <noscript>このアプリを実行するにはJavaScriptを有効にする必要があります。</noscript>
 
-        <!-- just 4SEO Optimization -->
+        <!-- SEO最適化のためのみ -->
 
         <div id="webRTCSeo">
             <h1>WebRTC</h1>
         </div>
 
-        <!-- show this before to join -->
+        <!-- 参加前にこれを表示 -->
 
         <div id="loadingDiv" class="center pulsate">
-            <h1>Loading</h1>
+            <h1>読み込み中</h1>
             <img class="loading-img" src="../images/loading.gif" />
             <pre>
-Please allow the camera or microphone
-access to use this app.
+このアプリを使用するには、
+カメラまたはマイクへのアクセスを許可してください。
             </pre>
         </div>
 
-        <!-- Scan to Join -->
+        <!-- スキャンして参加 -->
 
         <div id="qrRoomPopupContainer" class="top-center fadein">
             <canvas id="qrRoomPopup"></canvas>
-            <div id="qrText">Scan to join the room</div>
+            <div id="qrText">スキャンしてルームに参加</div>
         </div>
 
-        <!-- init user devices -->
+        <!-- ユーザーデバイスの初期化 -->
 
         <div id="initUser" class="init-user hidden">
-            <!-- <p>Please allow the camera & microphone access to use this app.</p> -->
+            <!-- <p>このアプリを使用するには、カメラとマイクへのアクセスを許可してください。</p> -->
             <div id="initVideoContainer" class="init-video-container">
                 <video
                     id="initVideo"
@@ -126,11 +126,11 @@ access to use this app.
             </div>
         </div>
 
-        <!-- Add emoji to username -->
+        <!-- ユーザー名に絵文字を追加 -->
 
         <div id="usernameEmoji" class="usernameEmoji fadein center hidden"></div>
 
-        <!-- Start buttons bar https://fontawesome.com/icons?d=gallery -->
+        <!-- 開始ボタンバー https://fontawesome.com/icons?d=gallery -->
 
         <div id="buttonsBar" class="fadein">
             <button id="shareRoomBtn" class="fas fa-share-alt"></button>
@@ -145,9 +145,9 @@ access to use this app.
             <button id="documentPiPBtn" class="fas fa-images"></button>
             <button id="aboutBtn" class="fas fa-question"></button>
         </div>
-        <!-- End left buttons -->
+        <!-- 左側ボタンの終了 -->
 
-        <!-- Start bottom buttons -->
+        <!-- 下部ボタンの開始 -->
         <div id="bottomButtons" class="fadein">
             <button id="toggleExtraBtn" class="fas fa-chevron-down"></button>
             <button id="audioBtn" class="fas fa-microphone"></button>
@@ -160,9 +160,9 @@ access to use this app.
             <button id="leaveRoomBtn" class="fa-solid fa-phone-slash"></button>
         </div>
 
-        <!-- End bottom buttons -->
+        <!-- 下部ボタンの終了 -->
 
-        <!-- Start room emoji picker -->
+        <!-- ルーム絵文字ピッカーの開始 -->
 
         <div id="emojiPickerContainer" class="roomEmoji fadein">
             <div id="emojiPickerHeader" class="emojiPickerHeader">
@@ -171,9 +171,9 @@ access to use this app.
         </div>
         <div id="userEmoji" class="userEmoji"></div>
 
-        <!-- End room emoji picker -->
+        <!-- ルーム絵文字ピッカーの終了 -->
 
-        <!-- Start chat room 
+        <!-- チャットルームの開始
         https://codepen.io/sajadhsm/pen/odaBdd
         https://getemoji.com
         -->
@@ -221,10 +221,10 @@ access to use this app.
                                     <hr />
                                 </li>
                                 <li>
-                                    <button id="msgerSaveBtn"><i class="fas fa-save"></i> Save messages</button>
+                                    <button id="msgerSaveBtn"><i class="fas fa-save"></i> メッセージを保存</button>
                                 </li>
                                 <li>
-                                    <button id="msgerClean"><i class="fas fa-trash"></i> Clean messages</button>
+                                    <button id="msgerClean"><i class="fas fa-trash"></i> メッセージをクリア</button>
                                 </li>
                             </ul>
                         </div>
@@ -234,11 +234,11 @@ access to use this app.
 
                 <main id="msgerChat" class="msger-chat"></main>
 
-                <!-- Start emoji picker -->
+                <!-- 絵文字ピッカーの開始 -->
 
                 <section id="msgerEmojiPicker" class="hidden fadein chatEmojiPicker"></section>
 
-                <!-- End emoji picker -->
+                <!-- 絵文字ピッカーの終了 -->
 
                 <div class="msger-inputarea">
                     <textarea
@@ -246,7 +246,7 @@ access to use this app.
                         cols="1"
                         id="msgerInput"
                         class="msger-input"
-                        placeholder="Write a message..."
+                        placeholder="メッセージを入力..."
                     ></textarea>
                 </div>
 
@@ -263,12 +263,12 @@ access to use this app.
                 </div>
             </section>
 
-            <!-- Start private msg -->
+            <!-- プライベートメッセージの開始 -->
 
             <section id="msgerCP" class="center fadein">
                 <section id="msgerCPSec" class="msger">
                     <header id="msgerCPHeader" class="msger-private-header">
-                        <div class="msger-header-title"><i class="fas fa-comment-alt"></i> Send Private messages</div>
+                        <div class="msger-header-title"><i class="fas fa-comment-alt"></i> プライベートメッセージを送信</div>
                         <div class="msger-header-options">
                             <button id="msgerCPCloseBtn" class="fas fa-times"></button>
                         </div>
@@ -278,7 +278,7 @@ access to use this app.
                             <input
                                 id="searchPeerBarName"
                                 type="text"
-                                placeholder=" 🔍 Search peer by name..."
+                                placeholder=" 🔍 ピアを名前で検索..."
                                 maxlength="254"
                                 name="search"
                             />
@@ -289,12 +289,12 @@ access to use this app.
                 </section>
             </section>
 
-            <!-- End private msg -->
+            <!-- プライベートメッセージの終了 -->
         </section>
 
-        <!-- End chat room -->
+        <!-- チャットルームの終了 -->
 
-        <!-- Start of caption section -->
+        <!-- キャプションセクションの開始 -->
 
         <section id="captionDraggable" class="caption-draggable fadein">
             <section id="caption" class="caption">
@@ -317,15 +317,15 @@ access to use this app.
                 <div id="captionFooter" class="caption-inputarea">
                     <select id="recognitionLanguage"></select>
                     <select id="recognitionDialect"></select>
-                    <button id="speechRecognitionStart"><i class="fas fa-play"></i> Start</button>
-                    <button id="speechRecognitionStop"><i class="fas fa-stop"></i> Stop</button>
+                    <button id="speechRecognitionStart"><i class="fas fa-play"></i> 開始</button>
+                    <button id="speechRecognitionStop"><i class="fas fa-stop"></i> 停止</button>
                 </div>
             </section>
         </section>
 
-        <!-- End of caption section -->
+        <!-- キャプションセクションの終了 -->
 
-        <!-- Start my settings -->
+        <!-- マイ設定の開始 -->
 
         <section id="mySettings" class="center fadein">
             <header id="mySettingsHeader">
@@ -334,37 +334,37 @@ access to use this app.
             <main class="mySettingsMain">
                 <div class="tab">
                     <button id="tabRoomBtn" class="fas fa-home tablinks">
-                        <p class="tabButtonText">Room</p>
+                        <p class="tabButtonText">ルーム</p>
                     </button>
                     <button id="tabVideoBtn" class="fas fa-video tablinks">
-                        <p class="tabButtonText">Video</p>
+                        <p class="tabButtonText">ビデオ</p>
                     </button>
                     <button id="tabAudioBtn" class="fas fa-microphone tablinks">
-                        <p class="tabButtonText">Audio</p>
+                        <p class="tabButtonText">オーディオ</p>
                     </button>
                     <button id="tabRecordingBtn" class="fas fa-record-vinyl tablinks">
-                        <p class="tabButtonText">Recording</p>
+                        <p class="tabButtonText">録画</p>
                     </button>
                     <button id="tabVideoShareBtn" class="fab fa-youtube tablinks">
-                        <p class="tabButtonText">Media</p>
+                        <p class="tabButtonText">メディア</p>
                     </button>
                     <button id="tabParticipantsBtn" class="fa-solid fa-users tablinks">
-                        <p class="tabButtonText">Participants</p>
+                        <p class="tabButtonText">参加者</p>
                     </button>
                     <button id="tabProfileBtn" class="fa-solid fa-user tablinks">
-                        <p class="tabButtonText">Profile</p>
+                        <p class="tabButtonText">プロフィール</p>
                     </button>
                     <button id="tabShortcutsBtn" class="fas fa-keyboard tablinks">
-                        <p class="tabButtonText">Shortcuts</p>
+                        <p class="tabButtonText">ショートカット</p>
                     </button>
                     <button id="tabNetworkBtn" class="fa-solid fa-network-wired tablinks">
-                        <p class="tabButtonText">Network</p>
+                        <p class="tabButtonText">ネットワーク</p>
                     </button>
                     <button id="tabStylingBtn" class="fas fa-palette tablinks">
-                        <p class="tabButtonText">Style</p>
+                        <p class="tabButtonText">スタイル</p>
                     </button>
                     <button id="tabLanguagesBtn" class="fas fa-globe tablinks">
-                        <p class="tabButtonText">Language</p>
+                        <p class="tabButtonText">言語</p>
                     </button>
                 </div>
 
@@ -382,16 +382,16 @@ access to use this app.
                         </table>
                         <div id="tabRoomSecurity">
                             <button id="lockRoomBtn" class="orange">
-                                <i class="fas fa-lock-open orange"></i>&nbsp;Lock room
+                                <i class="fas fa-lock-open orange"></i>&nbsp;ルームをロック
                             </button>
                             <button id="unlockRoomBtn" class="red">
-                                <i class="fas fa-lock red"></i>&nbsp;Unlock room
+                                <i class="fas fa-lock red"></i>&nbsp;ルームのロックを解除
                             </button>
                             <br />
                         </div>
                         <div id="tabEmailInvitation">
                             <button id="roomSendEmailBtn">
-                                <i class="fas fa-envelope-circle-check"></i>&nbsp;Send email invitation
+                                <i class="fas fa-envelope-circle-check"></i>&nbsp;メール招待を送信
                                 <br />
                             </button>
                         </div>
@@ -402,7 +402,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fas fa-microphone-lines"></i>
-                                        <p>Volume bar</p>
+                                        <p>音量バー</p>
                                     </div>
                                 </td>
                                 <td><input id="switchAudioPitchBar" class="toggle" type="checkbox" checked /></td>
@@ -411,7 +411,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fas fa-music"></i>
-                                        <p>Sounds</p>
+                                        <p>サウンド</p>
                                     </div>
                                 </td>
                                 <td><input id="switchSounds" class="toggle" type="checkbox" checked /></td>
@@ -420,7 +420,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fas fa-share-alt"></i>
-                                        <p>Share</p>
+                                        <p>共有</p>
                                     </div>
                                 </td>
                                 <td><input id="switchShare" class="toggle" type="checkbox" checked /></td>
@@ -429,7 +429,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fas fa-eye"></i>
-                                        <p>Buttons</p>
+                                        <p>ボタン</p>
                                     </div>
                                 </td>
                                 <td><input id="switchKeepButtonsVisible" class="toggle" type="checkbox" /></td>
@@ -441,7 +441,7 @@ access to use this app.
                         <div>
                             <div class="title">
                                 <i class="fas fa-video"></i>
-                                <p>Video Source</p>
+                                <p>ビデオソース</p>
                             </div>
                             <br />
                             <select id="videoSource"></select>
@@ -449,16 +449,16 @@ access to use this app.
                         <br />
                         <div class="title">
                             <i class="fas fa-palette"></i>
-                            <p>Video Quality</p>
+                            <p>ビデオ品質</p>
                         </div>
                         <br />
                         <select id="videoQuality">
-                            <option value="default">Default</option>
+                            <option value="default">デフォルト</option>
                             <option value="qvgaVideo">QVGA</option>
                             <option value="vgaVideo">VGA</option>
                             <option value="hdVideo">HD</option>
-                            <option value="fhdVideo">FULL HD</option>
-                            <option value="2kVideo">2k</option>
+                            <option value="fhdVideo">フルHD</option>
+                            <option value="2kVideo">2K</option>
                             <option value="4kVideo">4K</option>
                             <option value="6kVideo">6K</option>
                             <option value="8kVideo">8K</option>
@@ -466,42 +466,42 @@ access to use this app.
                         <br />
                         <div class="title">
                             <i class="fa-solid fa-film"></i>
-                            <p>Video fit</p>
+                            <p>ビデオフィット</p>
                         </div>
                         <br />
                         <select id="videoObjFitSelect">
-                            <option value="fill">Fill</option>
-                            <option value="contain">Contain</option>
-                            <option value="cover">Cover</option>
-                            <option value="scale-down">Scale-down</option>
-                            <option value="none">None</option>
+                            <option value="fill">フィル</option>
+                            <option value="contain">コンテイン</option>
+                            <option value="cover">カバー</option>
+                            <option value="scale-down">スケールダウン</option>
+                            <option value="none">なし</option>
                         </select>
                         <div id="videoFpsDiv">
                             <br />
                             <div class="title">
                                 <i class="fa-solid fa-camera"></i>
-                                <p>Camera FPS</p>
+                                <p>カメラFPS</p>
                             </div>
                             <br />
                             <select id="videoFps">
-                                <option value="60">60 - frame-per-second</option>
-                                <option value="30">30 - frame-per-second</option>
-                                <option value="15">15 - frame-per-second</option>
-                                <option value="5">5 - frame-per-second</option>
+                                <option value="60">60 - フレーム/秒</option>
+                                <option value="30">30 - フレーム/秒</option>
+                                <option value="15">15 - フレーム/秒</option>
+                                <option value="5">5 - フレーム/秒</option>
                             </select>
                         </div>
                         <div id="screenFpsDiv">
                             <br />
                             <div class="title">
                                 <i class="fa-solid fa-desktop"></i>
-                                <p>Screen FPS</p>
+                                <p>画面FPS</p>
                             </div>
                             <br />
                             <select id="screenFps">
-                                <option value="60">60 - frame-per-second</option>
-                                <option value="30">30 - frame-per-second</option>
-                                <option value="15">15 - frame-per-second</option>
-                                <option value="5">5 - frame-per-second</option>
+                                <option value="60">60 - フレーム/秒</option>
+                                <option value="30">30 - フレーム/秒</option>
+                                <option value="15">15 - フレーム/秒</option>
+                                <option value="5">5 - フレーム/秒</option>
                             </select>
                         </div>
                     </div>
@@ -510,7 +510,7 @@ access to use this app.
                         <div>
                             <div class="title">
                                 <i class="fas fa-microphone"></i>
-                                <p>Microphone</p>
+                                <p>マイク</p>
                             </div>
                             <br />
                             <select id="audioSource"></select>
@@ -532,7 +532,7 @@ access to use this app.
                         <div class="dropdown" id="dropDownMicOptions">
                             <button class="buttons" id="micOptionsBtn" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-screwdriver-wrench"></i>
-                                <p>Advanced options</p>
+                                <p>詳細オプション</p>
                                 <i class="fas fa-caret-down"></i>
                             </button>
                             <br /><br /><br /><br />
@@ -542,7 +542,7 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-ear-listen"></i> -->
-                                                <p>Auto gain control</p>
+                                                <p>自動ゲイン制御</p>
                                             </div>
                                         </td>
                                         <td><input class="toggle" id="switchAutoGainControl" type="checkbox" /></td>
@@ -551,7 +551,7 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-ear-listen"></i> -->
-                                                <p>Echo cancellation</p>
+                                                <p>エコーキャンセル</p>
                                             </div>
                                         </td>
                                         <td>
@@ -562,7 +562,7 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-ear-listen"></i> -->
-                                                <p>Noise suppression</p>
+                                                <p>ノイズ抑制</p>
                                             </div>
                                         </td>
                                         <td>
@@ -573,7 +573,7 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fab fa-audible"></i> -->
-                                                <p>Latency</p>
+                                                <p>遅延</p>
                                             </div>
                                         </td>
                                         <td>
@@ -596,7 +596,7 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-volume-high"></i> -->
-                                                <p>Volume</p>
+                                                <p>音量</p>
                                             </div>
                                         </td>
                                         <td>
@@ -619,7 +619,7 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-microphone-lines"></i> -->
-                                                <p>Sample rate</p>
+                                                <p>サンプルレート</p>
                                             </div>
                                         </td>
                                         <td>
@@ -633,13 +633,13 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-microphone-lines"></i> -->
-                                                <p>Sample size</p>
+                                                <p>サンプルサイズ</p>
                                             </div>
                                         </td>
                                         <td>
                                             <select id="sampleSizeSelect">
-                                                <option value="16">16 bits</option>
-                                                <option value="32">32 bits</option>
+                                                <option value="16">16 ビット</option>
+                                                <option value="32">32 ビット</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -647,20 +647,20 @@ access to use this app.
                                         <td class="microphone-table-width">
                                             <div class="title">
                                                 <!-- <i class="fas fa-microphone-lines"></i> -->
-                                                <p>Channel count</p>
+                                                <p>チャンネル数</p>
                                             </div>
                                         </td>
                                         <td>
                                             <select id="channelCountSelect">
-                                                <option value="1">1 (mono)</option>
-                                                <option value="2">2 (stereo)</option>
+                                                <option value="1">1 (モノラル)</option>
+                                                <option value="2">2 (ステレオ)</option>
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <button id="applyAudioOptionsBtn" class="fas fa-check">
-                                                <p>Apply options</p>
+                                                <p>オプションを適用</p>
                                             </button>
                                         </td>
                                     </tr>
@@ -670,13 +670,13 @@ access to use this app.
                         <div id="audioOutputDiv">
                             <div class="title">
                                 <i class="fas fa-headphones"></i>
-                                <p>Speaker</p>
+                                <p>スピーカー</p>
                             </div>
                             <br />
                             <select id="audioOutput"></select>
                             <button id="speakerTestBtn" class="buttons">
                                 <i class="fa-solid fa-circle-play"></i>
-                                <p>Test speaker</p>
+                                <p>スピーカーをテスト</p>
                             </button>
                             <br /><br /><br /><br /><br />
                         </div>
@@ -685,7 +685,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fa-solid fa-hand-pointer"></i>
-                                        <p>Push to talk</p>
+                                        <p>プッシュ・トゥ・トーク</p>
                                     </div>
                                 </td>
                                 <td><input id="switchPushToTalk" class="toggle" type="checkbox" /></td>
@@ -701,7 +701,7 @@ access to use this app.
                                     <td>
                                         <div class="title">
                                             <i class="fa-solid fa-film"></i>
-                                            <p>Prioritize H.264</p>
+                                            <p>H.264を優先</p>
                                         </div>
                                     </td>
                                     <td><input class="toggle" id="switchH264Recording" type="checkbox" /></td>
@@ -714,11 +714,11 @@ access to use this app.
                             <br />
                             <button id="pauseRecBtn" class="buttons">
                                 <i class="far fa-pause-circle"></i>
-                                <p>Pause recording</p>
+                                <p>録画を一時停止</p>
                             </button>
                             <button id="resumeRecBtn" class="buttons">
                                 <i class="far fa-play-circle"></i>
-                                <p>Resume recording</p>
+                                <p>録画を再開</p>
                             </button>
                         </div>
                         <div class="clw" id="lastRecordingInfo"></div>
@@ -727,7 +727,7 @@ access to use this app.
                     <div id="tabMedia" class="tabcontent">
                         <button id="shareMediaAudioVideoBtn" class="buttons">
                             <i class="fa-solid fa-circle-play"></i>
-                            <p>Share a Video or Audio</p>
+                            <p>ビデオまたはオーディオを共有</p>
                         </button>
                     </div>
 
@@ -739,11 +739,11 @@ access to use this app.
                         <br />
                         <div id="tabRoomParticipants">
                             <br />
-                            <button id="captionEveryoneBtn"><i class="fas fa-play"></i>&nbsp;Start captions</button>
-                            <button id="muteEveryoneBtn"><i class="fas fa-microphone"></i>&nbsp;Mute everyone</button>
-                            <button id="hideEveryoneBtn"><i class="fas fa-video"></i>&nbsp;Hide everyone</button>
+                            <button id="captionEveryoneBtn"><i class="fas fa-play"></i>&nbsp;キャプションを開始</button>
+                            <button id="muteEveryoneBtn"><i class="fas fa-microphone"></i>&nbsp;全員をミュート</button>
+                            <button id="hideEveryoneBtn"><i class="fas fa-video"></i>&nbsp;全員を非表示</button>
                             <button id="ejectEveryoneBtn">
-                                <i class="fas fa-right-from-bracket"></i>&nbsp;Eject everyone
+                                <i class="fas fa-right-from-bracket"></i>&nbsp;全員を退出させる
                             </button>
                         </div>
                     </div>
@@ -754,7 +754,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fa-solid fa-keyboard"></i>
-                                        <p>Keyboard shortcuts</p>
+                                        <p>キーボードショートカット</p>
                                     </div>
                                 </td>
                                 <td><input class="toggle" id="switchShortcuts" type="checkbox" /></td>
@@ -764,81 +764,81 @@ access to use this app.
                             <table id="shortcutsTable">
                                 <thead>
                                     <tr>
-                                        <th>Shortcut</th>
-                                        <th>Icon</th>
-                                        <th>Action</th>
+                                        <th>ショートカット</th>
+                                        <th>アイコン</th>
+                                        <th>アクション</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td><i class="fa-solid fa-a"></i></td>
                                         <td><i class="fas fa-microphone"></i></td>
-                                        <td><strong>Toggle</strong> microphone</td>
+                                        <td>マイクを<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-v"></i></td>
                                         <td><i class="fas fa-video"></i></td>
-                                        <td><strong>Toggle</strong> camera</td>
+                                        <td>カメラを<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-s"></i></td>
                                         <td><i class="fas fa-desktop"></i></td>
-                                        <td><strong>Toggle</strong> screen</td>
+                                        <td>画面を<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-h"></i></td>
                                         <td><i class="fas fa-hand-paper"></i></td>
-                                        <td><strong>Toggle</strong> raise hand</td>
+                                        <td>挙手を<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-c"></i></td>
                                         <td><i class="fas fa-comments"></i></td>
-                                        <td><strong>Toggle</strong> chat</td>
+                                        <td>チャットを<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-o"></i></td>
                                         <td><i class="fas fa-cogs"></i></td>
-                                        <td><strong>Toggle</strong> settings</td>
+                                        <td>設定を<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-x"></i></td>
                                         <td><i class="fas fa-user"></i></td>
-                                        <td><strong>Toggle</strong> hide myself</td>
+                                        <td>自分を非表示に<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-r"></i></td>
                                         <td><i class="fas fa-record-vinyl"></i></td>
-                                        <td><strong>Toggle</strong> recording</td>
+                                        <td>録画を<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-e"></i></td>
                                         <td><i class="fas fa-face-smile"></i></td>
-                                        <td><strong>Toggle</strong> emoji</td>
+                                        <td>絵文字を<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-k"></i></td>
                                         <td><i class="fas fa-closed-captioning"></i></td>
-                                        <td><strong>Toggle</strong> captions</td>
+                                        <td>キャプションを<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-w"></i></td>
                                         <td><i class="fas fa-chalkboard-teacher"></i></td>
-                                        <td><strong>Toggle</strong> whiteboard</td>
+                                        <td>ホワイトボードを<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-d"></i></td>
                                         <td><i class="fas fa-images"></i></td>
-                                        <td><strong>Toggle</strong> document PIP</td>
+                                        <td>ドキュメントPIPを<strong>切り替える</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-t"></i></td>
                                         <td><i class="fas fas fa-camera-retro"></i></td>
-                                        <td><strong>Snapshot</strong> screen/window/tab</td>
+                                        <td>画面/ウィンドウ/タブの<strong>スナップショット</strong></td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa-solid fa-f"></i></td>
                                         <td><i class="fas fa-folder-open"></i></td>
-                                        <td><strong>Share</strong> the file</td>
+                                        <td>ファイルを<strong>共有</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -853,24 +853,24 @@ access to use this app.
                             <br />
                             <div class="title">
                                 <i class="fas fa-user"></i>
-                                <p>Name</p>
+                                <p>名前</p>
                             </div>
                             <br /><br />
                             <div>
-                                <input id="myPeerNameSet" type="text" placeholder="Change name..." maxlength="254" />
-                                <button id="myPeerNameSetBtn"><i class="fas fa-user-edit"></i>&nbsp;Change name</button>
+                                <input id="myPeerNameSet" type="text" placeholder="名前を変更..." maxlength="254" />
+                                <button id="myPeerNameSetBtn"><i class="fas fa-user-edit"></i>&nbsp;名前を変更</button>
                             </div>
                         </div>
                         <br />
                         <div class="title">
                             <i class="fa-solid fa-user-shield"></i>
-                            <p>Presenter:</p>
+                            <p>プレゼンター:</p>
                             <p id="isPeerPresenter">true</p>
                         </div>
                         <br /><br />
                         <div class="title">
                             <i class="fa-solid fa-circle-info"></i>
-                            <p>Extra info:</p>
+                            <p>追加情報:</p>
                         </div>
                         <div class="extra-info-container">
                             <pre id="extraInfo"></pre>
@@ -892,7 +892,7 @@ access to use this app.
                                 <td>
                                     <div class="title">
                                         <i class="fa-solid fa-house-signal"></i>
-                                        <p>Host</p>
+                                        <p>ホスト</p>
                                     </div>
                                 </td>
                                 <td><p id="networkHost">🔴</p></td>
@@ -922,23 +922,23 @@ access to use this app.
                     <div id="tabStyling" class="tabcontent">
                         <div class="title">
                             <i class="fa-solid fa-palette"></i>
-                            <p>Theme</p>
+                            <p>テーマ</p>
                         </div>
                         <br />
                         <select id="mirotalkTheme">
-                            <option value="dark">⚫️ Dark</option>
-                            <option value="grey">⚪️ Grey</option>
-                            <option value="green">🟢 Green</option>
-                            <option value="blue">🔵 Blue</option>
-                            <option value="red">🔴 Red</option>
-                            <option value="purple">🟣 Purple</option>
-                            <option value="orange">🟠 Orange</option>
-                            <option value="yellow">🟡 Yellow</option>
+                            <option value="dark">⚫️ ダーク</option>
+                            <option value="grey">⚪️ グレー</option>
+                            <option value="green">🟢 グリーン</option>
+                            <option value="blue">🔵 ブルー</option>
+                            <option value="red">🔴 レッド</option>
+                            <option value="purple">🟣 パープル</option>
+                            <option value="orange">🟠 オレンジ</option>
+                            <option value="yellow">🟡 イエロー</option>
                         </select>
                         <br />
                         <div class="title">
                             <i class="fas fa-fill-drip"></i>
-                            <p>Custom theme</p>
+                            <p>カスタムテーマ</p>
                         </div>
                         <br />
                         <input id="themeColorPicker" class="theme-color-picker" type="text" />
@@ -947,7 +947,7 @@ access to use this app.
                             <div>
                                 <div class="title">
                                     <i class="fas fa-save"></i>
-                                    <p>Keep custom</p>
+                                    <p>カスタムを維持</p>
                                 </div>
                             </div>
                             <input id="keepCustomTheme" class="toggle" type="checkbox" />
@@ -955,24 +955,24 @@ access to use this app.
                         <br />
                         <div class="title">
                             <i class="fa-solid fa-up-down-left-right"></i>
-                            <p>Buttons bar</p>
+                            <p>ボタンバー</p>
                         </div>
                         <br />
                         <select id="mainButtonsBarPosition">
-                            <option value="vertical">Vertical</option>
-                            <option value="horizontal">Horizontal</option>
+                            <option value="vertical">垂直</option>
+                            <option value="horizontal">水平</option>
                         </select>
                         <br />
                         <div id="pinUnpinGridDiv">
                             <div class="title">
                                 <i class="fa-solid fa-map-pin"></i>
-                                <p>Pin video position</p>
+                                <p>ビデオのピン留め位置</p>
                             </div>
                             <br />
                             <select id="pinVideoPositionSelect">
-                                <option value="vertical">Vertical</option>
-                                <option value="horizontal">Horizontal</option>
-                                <option value="top">Top</option>
+                                <option value="vertical">垂直</option>
+                                <option value="horizontal">水平</option>
+                                <option value="top">上部</option>
                             </select>
                         </div>
                     </div>
@@ -980,7 +980,7 @@ access to use this app.
                     <div id="tabLanguages" class="tabcontent">
                         <div class="title">
                             <i class="fa-solid fa-language"></i>
-                            <p>Language</p>
+                            <p>言語</p>
                         </div>
                         <br />
                         <div id="google_translate_element"></div>
@@ -991,9 +991,9 @@ access to use this app.
             </main>
         </section>
 
-        <!-- End my settings -->
+        <!-- マイ設定の終了 -->
 
-        <!-- Start whiteboard -->
+        <!-- ホワイトボードの開始 -->
 
         <section id="whiteboard" class="hidden">
             <header id="whiteboardHeader" class="whiteboard-header">
@@ -1025,12 +1025,12 @@ access to use this app.
                             class="whiteboard-dropdown-menu"
                             aria-labelledby="whiteboardDropDownMenu"
                         >
-                            <button id="whiteboardImgFileBtn"><i class="far fa-image"></i> Add image file</button>
-                            <button id="whiteboardImgUrlBtn"><i class="fas fa-link"></i> Add image URL</button>
-                            <button id="whiteboardPdfFileBtn"><i class="far fa-file-pdf"></i> Add pdf file</button>
-                            <button id="whiteboardTextBtn"><i class="fas fa-spell-check"></i> Add text</button>
-                            <button id="whiteboardLineBtn"><i class="fas fa-slash"></i> Add line</button>
-                            <button id="whiteboardRectBtn"><i class="far fa-square"></i> Add rectangle</button>
+                            <button id="whiteboardImgFileBtn"><i class="far fa-image"></i> 画像ファイルを追加</button>
+                            <button id="whiteboardImgUrlBtn"><i class="fas fa-link"></i> 画像URLを追加</button>
+                            <button id="whiteboardPdfFileBtn"><i class="far fa-file-pdf"></i> PDFファイルを追加</button>
+                            <button id="whiteboardTextBtn"><i class="fas fa-spell-check"></i> テキストを追加</button>
+                            <button id="whiteboardLineBtn"><i class="fas fa-slash"></i> 線を追加</button>
+                            <button id="whiteboardRectBtn"><i class="far fa-square"></i> 四角形を追加</button>
                             <button id="whiteboardTriangleBtn">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -1041,12 +1041,12 @@ access to use this app.
                                 >
                                     <path d="M12 5.887l8.468 14.113h-16.936l8.468-14.113zm0-3.887l-12 20h24l-12-20z" />
                                 </svg>
-                                Add triangle
+                                三角形を追加
                             </button>
-                            <button id="whiteboardCircleBtn"><i class="far fa-circle"></i> Add circle</button>
-                            <button id="whiteboardSaveBtn"><i class="fas fa-save"></i> Save</button>
-                            <button id="whiteboardEraserBtn"><i class="fas fa-eraser"></i> Eraser</button>
-                            <button id="whiteboardCleanBtn"><i class="fas fa-trash"></i> Clean</button>
+                            <button id="whiteboardCircleBtn"><i class="far fa-circle"></i> 円を追加</button>
+                            <button id="whiteboardSaveBtn"><i class="fas fa-save"></i> 保存</button>
+                            <button id="whiteboardEraserBtn"><i class="fas fa-eraser"></i> 消しゴム</button>
+                            <button id="whiteboardCleanBtn"><i class="fas fa-trash"></i> クリア</button>
                         </div>
                     </div>
                 </div>
@@ -1056,34 +1056,34 @@ access to use this app.
             </main>
         </section>
 
-        <!-- End whiteboard -->
+        <!-- ホワイトボードの終了 -->
 
-        <!-- Start File Send -->
+        <!-- ファイル送信の開始 -->
 
         <div id="sendFileDiv" class="center fadein">
             <img id="imgShareSend" src="../images/share.png" alt="mirotalk-share-send" class="center-img" /><br />
             <div id="sendFileInfo"></div>
             <div id="sendFilePercentage"></div>
             <progress id="sendProgress" max="0" value="0"></progress>
-            <button id="sendAbortBtn"><i class="fas fa-stop-circle"></i>&nbsp; Abort</button>
+            <button id="sendAbortBtn"><i class="fas fa-stop-circle"></i>&nbsp; 中止</button>
         </div>
 
-        <!-- End File Send -->
+        <!-- ファイル送信の終了 -->
 
-        <!-- Start File Receive -->
+        <!-- ファイル受信の開始 -->
 
         <div id="receiveFileDiv" class="center fadein">
             <img id="imgShareReceive" src="../images/share.png" alt="mirotalk-share-receive" class="center-img" /><br />
             <div id="receiveFileInfo"></div>
             <div id="receiveFilePercentage"></div>
             <progress id="receiveProgress" max="0" value="0"></progress>
-            <button id="receiveAbortBtn"><i class="fas fa-stop-circle"></i>&nbsp; Abort</button>
-            <button id="receiveHideBtn"><i class="fas fa-eye-slash"></i>&nbsp; Hide</button>
+            <button id="receiveAbortBtn"><i class="fas fa-stop-circle"></i>&nbsp; 中止</button>
+            <button id="receiveHideBtn"><i class="fas fa-eye-slash"></i>&nbsp; 非表示</button>
         </div>
 
-        <!-- Stop File Receive -->
+        <!-- ファイル受信の停止 -->
 
-        <!-- Start video URL iframe -->
+        <!-- ビデオURL iframeの開始 -->
 
         <div id="videoUrlCont" class="center fadein">
             <div id="videoUrlHeader">
@@ -1092,7 +1092,7 @@ access to use this app.
             <br />
             <iframe
                 id="videoUrlIframe"
-                title="Video Url Player"
+                title="ビデオURLプレイヤー"
                 src=""
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1100,9 +1100,9 @@ access to use this app.
             ></iframe>
         </div>
 
-        <!-- End Youtube Iframe -->
+        <!-- Youtube Iframeの終了 -->
 
-        <!-- Start Video - Audio player -->
+        <!-- ビデオ・オーディオプレイヤーの開始 -->
 
         <div id="videoAudioUrlCont" class="center fadein">
             <div id="videoAudioUrlHeader">
@@ -1112,9 +1112,9 @@ access to use this app.
             <video id="videoAudioUrlElement" src="" autoplay playsinline controls></video>
         </div>
 
-        <!-- End Video - Audio player -->
+        <!-- ビデオ・オーディオプレイヤーの終了 -->
 
-        <!-- Start Video container -->
+        <!-- ビデオコンテナの開始 -->
 
         <div id="videoPinMediaContainer"></div>
         <div id="videoMediaContainer">
@@ -1129,26 +1129,26 @@ access to use this app.
             </div>-->
         </div>
 
-        <!-- End Video container -->
+        <!-- ビデオコンテナの終了 -->
 
         <!--
-        - JS scripts https://cdn.jsdelivr.net
+        - JSスクリプト https://cdn.jsdelivr.net
         
-        - https://webrtc.github.io/adapter/adapter-latest.js                (https://github.com/webrtcHacks/adapter)
-        - https://github.com/leizongmin/js-xss                              (https://www.npmjs.com/package/xss)
-        - https://www.npmjs.com/package/marked                              (https://github.com/markedjs/marked)
-        - https://www.npmjs.com/package/sweetalert2                         (https://github.com/sweetalert2/sweetalert2)
-        - https://www.npmjs.com/package/fabric                              (https://github.com/fabricjs/fabric.js)
-        - https://www.npmjs.com/package/qrious                              (https://github.com/neocotic/qrious)
-        - https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js    (https://github.com/missive/emoji-mart)
-        - https://mozilla.github.io/pdf.js/                                 (https://github.com/mozilla/pdf.js)
-        - https://www.jsdelivr.com/package/npm/crypto-js                    (https://github.com/brix/crypto-js/)
-        - https://www.npmjs.com/package/tippy.js                            (https://github.com/atomiks/tippyjs) 
-        - https://flatpickr.js.org/                                         (https://github.com/flatpickr/flatpickr)
-        - https://simonwep.github.io/pickr/                                 (https://github.com/simonwep/pickr)
-        - https://uaparser.dev/                                             (https://github.com/faisalman/ua-parser-js)
-        - https://www.npmjs.com/package/axios                               (https://github.com/axios/axios)
-        - https://highlightjs.org/                                          (https://github.com/highlightjs/highlight.js)
+        - https://webrtc.github.io/adapter/adapter-latest.js                
+        - https://github.com/leizongmin/js-xss                              
+        - https://www.npmjs.com/package/marked                              
+        - https://www.npmjs.com/package/sweetalert2                         
+        - https://www.npmjs.com/package/fabric                              
+        - https://www.npmjs.com/package/qrious                              
+        - https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js    
+        - https://mozilla.github.io/pdf.js/                                 
+        - https://www.jsdelivr.com/package/npm/crypto-js                    
+        - https://www.npmjs.com/package/tippy.js                             
+        - https://flatpickr.js.org/                                         
+        - https://simonwep.github.io/pickr/                                 
+        - https://uaparser.dev/                                             
+        - https://www.npmjs.com/package/axios                               
+        - https://highlightjs.org/                                          
         -->
         <script defer src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>
@@ -1180,11 +1180,12 @@ access to use this app.
         <script defer src="../js/videoGrid.js"></script>
         <script defer src="../js/translate.js"></script>
 
-        <!-- end of Js scripts -->
+        <!-- Jsスクリプトの終了 -->
 
         <!-- 
-		the <video> and <audio> tags are all added and removed dynamically
-		in 'onAddStream', 'setupLocalMedia', and 'removePeer'/'disconnect'
+		<video> および <audio> タグはすべて
+		'onAddStream'、'setupLocalMedia'、'removePeer'/'disconnect' で
+		動的に追加および削除されます。
 		-->
     </body>
 </html>
