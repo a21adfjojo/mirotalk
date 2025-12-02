@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="ja" class="no-js">
     <head>
-        <!-- Title and Icon -->
+        <!-- タイトルとアイコン -->
 
-        <title id="landingTitle">MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.</title>
+        <title id="landingTitle">MiroTalk 無料で安全なビデオ通話、チャット、画面共有。</title>
         <link id="shortcutIcon" rel="shortcut icon" href="../images/logo.svg" />
         <link id="appleTouchIcon" rel="apple-touch-icon" href="../images/logo.svg" />
 
-        <!-- Meta Information -->
+        <!-- メタ情報 -->
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,21 +15,21 @@
 
         <meta
             name="description"
-            content="MiroTalk powered by WebRTC, Real-time Simple Secure Fast video calls, chat and screen sharing capabilities in the browser, from your mobile or desktop."
+            content="WebRTCを搭載したMiroTalkは、ブラウザ、モバイル、デスクトップからリアルタイムでシンプル、安全、高速なビデオ通話、チャット、画面共有機能を提供します。"
         />
         <meta
             name="keywords"
-            content="webrtc, self hosted, voip, sip, real-time communications, chat, messaging, meet, webrtc stun, webrtc turn, video meeting, video chat, video conference, multi video chat, multi video conference, peer to peer, p2p, rtc, alternative to, zoom, microsoft teams, google meet, jitsi, meeting"
+            content="webrtc, セルフホスト, voip, sip, リアルタイムコミュニケーション, チャット, メッセージング, 会議, webrtc stun, webrtc turn, ビデオ会議, ビデオチャット, ビデオカンファレンス, マルチビデオチャット, マルチビデオカンファレンス, ピアツーピア, p2p, rtc, 代替, zoom, microsoft teams, google meet, jitsi, 会議"
         />
 
         <!-- https://ogp.me -->
 
-        <meta property="og:type" content="{{OG_TYPE}}" />
-        <meta property="og:site_name" content="{{OG_SITE_NAME}}" />
-        <meta property="og:title" content="{{OG_TITLE}}" />
-        <meta property="og:description" content="{{OG_DESCRIPTION}}" />
-        <meta property="og:image" content="{{OG_IMAGE}}" />
-        <meta property="og:url" content="{{OG_URL}}" />
+        <meta property="og:type" content="{{OG_TYPE}}" /> <!-- OGタイプ -->
+        <meta property="og:site_name" content="{{OG_SITE_NAME}}" /> <!-- OGサイト名 -->
+        <meta property="og:title" content="{{OG_TITLE}}" /> <!-- OGタイトル -->
+        <meta property="og:description" content="{{OG_DESCRIPTION}}" /> <!-- OG説明 -->
+        <meta property="og:image" content="{{OG_IMAGE}}" /> <!-- OG画像 -->
+        <meta property="og:url" content="{{OG_URL}}" /> <!-- OG URL -->
 
         <!-- xss -->
 
@@ -39,12 +39,12 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-        <!-- StyleSheet -->
+        <!-- スタイルシート -->
 
         <link rel="stylesheet" href="../css/landing.css" />
         <link rel="stylesheet" href="../css/newcall.css" />
 
-        <!-- https://animate.style 4 using for swal fadeIn-Out -->
+        <!-- https://animate.style 4 swalのfadeIn-Outに使用 -->
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -96,17 +96,15 @@
                                             class="mt-32 mb-16 reveal-from-bottom"
                                             data-reveal-delay="150"
                                         >
-                                            MiroTalk<br />Free browser based Real-time video calls.<br />
-                                            Simple, Secure, Fast.
+                                            MiroTalk<br />無料ブラウザベースのリアルタイムビデオ通話。<br />
+                                            シンプル、安全、高速。
                                         </h1>
                                         <p
                                             id="appDescription"
                                             class="mt-0 mb-32 reveal-from-bottom"
                                             data-reveal-delay="300"
                                         >
-                                            Start your next video call with a single click. No download, plug-in, or
-                                            login is required. Just get straight to talking, messaging, and sharing your
-                                            screen.
+                                            ワンクリックで次のビデオ通話を開始できます。ダウンロード、プラグイン、ログインは不要です。すぐに会話、メッセージング、画面共有を開始できます。
                                         </p>
                                     </div>
                                     <style>
@@ -127,8 +125,8 @@
                         <div class="cta-inner section-inner cta-split br-12">
                             <div class="cta-slogan">
                                 <h3 id="appJoinDescription" class="m-0">
-                                    Pick a room name.<br />
-                                    How about this one?
+                                    ルーム名を選んでください。<br />
+                                    これはどうですか？
                                 </h3>
                             </div>
                             <div class="cta-action">
@@ -147,12 +145,12 @@
                                             class="button button-primary br-6 mr-8 mb-8 fas fa-arrows-rotate"
                                         ></button>
                                         <button id="joinRoomButton" class="button button-primary br-6">
-                                            Join Room
+                                            ルームに参加
                                         </button>
                                     </div>
                                 </div>
                                 <div id="lastRoomContainer" class="last-room">
-                                    <span id="appJoinLastRoom">Your recent room:</span>
+                                    <span id="appJoinLastRoom">最近のルーム:</span>
                                     <a id="lastRoom"></a>
                                 </div>
                             </div>
@@ -166,12 +164,10 @@
                             <div class="section-header">
                                 <div class="container-xs reveal-from-bottom" data-reveal-delay="650">
                                     <h2 class="mt-0 mb-16">
-                                        Unlimited number of conference rooms without call time limitation
+                                        通話時間制限なしで無制限の会議室
                                     </h2>
                                     <p class="m-0">
-                                        MiroTalk is built radically differently. We left behind slow bulky servers,
-                                        opting for peer-to-peer calling. We engineered a platform with maximum video
-                                        quality lowest latency that makes your calls crystal clear.
+                                        MiroTalkは根本的に異なる方法で構築されています。遅くてかさばるサーバーを捨て、ピアツーピア通話を選択しました。最高のビデオ品質と最低の遅延で、通話をクリアにするプラットフォームを設計しました。
                                     </p>
                                 </div>
                             </div>
@@ -184,15 +180,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/screenSharing.svg"
-                                                    alt="Screen Sharing"
+                                                    alt="画面共有"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">Screen Sharing</h4>
+                                            <h4 class="mt-0 mb-8">画面共有</h4>
                                             <p class="m-0 text-sm">
-                                                Share your screen, application window, present your documents, slides
-                                                and more. Up to 8k resolution and speed up to 60fps.
+                                                画面、アプリケーションウィンドウを共有し、ドキュメント、スライドなどを提示します。最大8K解像度、最大60fpsの速度に対応。
                                             </p>
                                         </div>
                                     </div>
@@ -205,15 +200,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/webcamStreaming.svg"
-                                                    alt="WebCam Streaming"
+                                                    alt="ウェブカメラストリーミング"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">WebCam Streaming</h4>
+                                            <h4 class="mt-0 mb-8">ウェブカメラストリーミング</h4>
                                             <p class="m-0 text-sm">
-                                                Having the webcam on, allows participants to make a deeper connection
-                                                with you. Up to 8k resolution and speed up to 60fps.
+                                                ウェブカメラをオンにすることで、参加者はあなたとのより深い繋がりを築くことができます。最大8K解像度、最大60fpsの速度に対応。
                                             </p>
                                         </div>
                                     </div>
@@ -223,14 +217,13 @@
                                     <div class="tiles-item-inner">
                                         <div class="features-tiles-item-header">
                                             <div class="features-tiles-item-image mb-16">
-                                                <img class="wh-200-150" src="../svg/webcamChat.svg" alt="Chat Room" />
+                                                <img class="wh-200-150" src="../svg/webcamChat.svg" alt="チャットルーム" />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">Chat Room</h4>
+                                            <h4 class="mt-0 mb-8">チャットルーム</h4>
                                             <p class="m-0 text-sm">
-                                                Chat with others in the meeting, either public chat or private, save the
-                                                meeting messages. An integrated emoji picker to show your feeling.
+                                                会議中の他の参加者と、公開またはプライベートでチャットし、会議メッセージを保存します。感情を表現するための絵文字ピッカーも統合されています。
                                             </p>
                                         </div>
                                     </div>
@@ -243,15 +236,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/recordingMeeting.svg"
-                                                    alt="Meeting Recording"
+                                                    alt="会議の録画"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">Meeting Recording</h4>
+                                            <h4 class="mt-0 mb-8">会議の録画</h4>
                                             <p class="m-0 text-sm">
-                                                Record your Screen, WebCam and Audio. Save it for use in the future or
-                                                to share with others.
+                                                画面、ウェブカメラ、音声を録画します。将来の使用や他の人との共有のために保存します。
                                             </p>
                                         </div>
                                     </div>
@@ -264,15 +256,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/interactiveWhitboard.svg"
-                                                    alt="Interactive Whiteboard"
+                                                    alt="インタラクティブホワイトボード"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">Interactive Whiteboard</h4>
+                                            <h4 class="mt-0 mb-8">インタラクティブホワイトボード</h4>
                                             <p class="m-0 text-sm">
-                                                Advanced collaborative whiteboard to draw and explain your concepts to
-                                                the other participants in the meeting.
+                                                会議の他の参加者に概念を描画し説明するための高度な共同ホワイトボード。
                                             </p>
                                         </div>
                                     </div>
@@ -285,15 +276,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/fileSharing.svg"
-                                                    alt="File Sharing"
+                                                    alt="ファイル共有"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">File Sharing</h4>
+                                            <h4 class="mt-0 mb-8">ファイル共有</h4>
                                             <p class="m-0 text-sm">
-                                                Share any types of files to all participants in the meeting, in total
-                                                security, thanks to Datagram Transport Layer Security (DTLS).
+                                                Datagram Transport Layer Security (DTLS) のおかげで、あらゆる種類のファイルを会議のすべての参加者に完全に安全に共有できます。
                                             </p>
                                         </div>
                                     </div>
@@ -309,8 +299,7 @@
                                         <div class="features-tiles-item-content">
                                             <h4 class="mt-0 mb-8">ChatGPT</h4>
                                             <p class="m-0 text-sm">
-                                                ChatGPT for answering questions, providing information, and connecting
-                                                users to relevant resources.
+                                                質問に答えたり、情報を提供したり、ユーザーを関連リソースに接続するためのChatGPT。
                                             </p>
                                         </div>
                                     </div>
@@ -326,8 +315,7 @@
                                         <div class="features-tiles-item-content">
                                             <h4 class="mt-0 mb-8">Rest API</h4>
                                             <p class="m-0 text-sm">
-                                                Seamlessly integrate and power your applications with ease. Quick setup
-                                                and top-tier support.
+                                                アプリケーションを簡単にシームレスに統合し、強化します。迅速なセットアップと一流のサポート。
                                             </p>
                                         </div>
                                     </div>
@@ -340,15 +328,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/totalPrivacy.svg"
-                                                    alt="Total Privacy"
+                                                    alt="完全なプライバシー"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">Total Privacy</h4>
+                                            <h4 class="mt-0 mb-8">完全なプライバシー</h4>
                                             <p class="m-0 text-sm">
-                                                Data stays between you and your participants. MiroTalk doesn't collect
-                                                or share personal information. It's built for privacy first.
+                                                データはあなたと参加者の間で保持されます。MiroTalkは個人情報を収集または共有しません。プライバシーを最優先に構築されています。
                                             </p>
                                         </div>
                                     </div>
@@ -361,15 +348,14 @@
                                                 <img
                                                     class="wh-200-150"
                                                     src="../svg/maximumSecurity.svg"
-                                                    alt="Maximum Security"
+                                                    alt="最高のセキュリティ"
                                                 />
                                             </div>
                                         </div>
                                         <div class="features-tiles-item-content">
-                                            <h4 class="mt-0 mb-8">Maximum Security</h4>
+                                            <h4 class="mt-0 mb-8">最高のセキュリティ</h4>
                                             <p class="m-0 text-sm">
-                                                End-to-end state-of-the-art encryption means your participants are
-                                                exactly that. Your calls.
+                                                最先端のエンドツーエンド暗号化により、参加者との通話は完全に保護されます。
                                             </p>
                                         </div>
                                     </div>
@@ -384,7 +370,7 @@
                         <div class="team-inner section-inner has-top-divider">
                             <div class="section-header center-content reveal-from-bottom">
                                 <div class="container-xs">
-                                    <h2 class="mt-0 mb-16">Supported Browsers</h2>
+                                    <h2 class="mt-0 mb-16">対応ブラウザ</h2>
                                 </div>
                             </div>
                             <div class="tiles-wrap">
@@ -394,7 +380,7 @@
                                             <div class="team-item-image mb-24">
                                                 <img
                                                     src="../images/browsers.png"
-                                                    alt="Supported Browsers"
+                                                    alt="対応ブラウザ"
                                                     width="auto"
                                                     height="auto"
                                                 />
@@ -402,7 +388,7 @@
                                         </div>
                                         <div class="team-item-content">
                                             <h5 class="team-item-name mt-0 mb-4">
-                                                Chrome, Edge, Firefox, Opera, Safari, Brave and more.
+                                                Chrome、Edge、Firefox、Opera、Safari、Braveなど。
                                             </h5>
                                         </div>
                                     </div>
@@ -417,7 +403,7 @@
                         <div class="team-inner section-inner has-top-divider">
                             <div class="section-header center-content reveal-from-bottom">
                                 <div class="container-xs">
-                                    <h2 class="mt-0 mb-16">Meet the team</h2>
+                                    <h2 class="mt-0 mb-16">チーム紹介</h2>
                                 </div>
                             </div>
 
@@ -429,7 +415,7 @@
                                             <div class="team-item-image mb-24">
                                                 <img
                                                     src="../images/miroslav-pejic.png"
-                                                    alt="Team member author"
+                                                    alt="チームメンバーの著者"
                                                     width="180"
                                                     height="180"
                                                     class="rounded-image"
@@ -444,7 +430,7 @@
                                                 <h5 class="team-item-name mt-0 mb-4">Miroslav Pejic</h5>
                                             </a>
                                             <div class="team-item-role text-xxs fw-500 tt-u text-color-primary mb-8">
-                                                Full Stack Developer
+                                                フルスタック開発者
                                             </div>
                                         </div>
                                     </div>
@@ -459,11 +445,11 @@
                         <div class="section-inner has-top-divider">
                             <div class="container-xs">
                                 <div class="section-header center-content">
-                                    <h2 class="m-0">Try an easier, more secure way of calling.</h2>
+                                    <h2 class="m-0">より簡単で安全な通話方法を試してみてください。</h2>
                                 </div>
                                 <div class="center-content">
                                     <a class="button button-custom button-wide-mobile br-6 pulse" href="/newcall"
-                                        >Try now</a
+                                        >今すぐ試す</a
                                     >
                                 </div>
                             </div>
@@ -473,7 +459,7 @@
 
                 <section id="poweredBy" class="clients section">
                     <div class="container">
-                        <h4 class="mt-24 powered-by">Powered by</h4>
+                        <h4 class="mt-24 powered-by">提供元</h4>
                         <div class="clients-inner section-inner has-animations has-top-divider has-bottom-divider">
                             <ul class="list-reset">
                                 <li class="reveal-from-top" data-reveal-delay="150">
@@ -481,7 +467,7 @@
                                         ><img
                                             class="clients-size-logo"
                                             src="../sponsors/Hetzner.png"
-                                            alt="Powered by Hetzner"
+                                            alt="Hetzner提供"
                                     /></a>
                                 </li>
                                 <li class="reveal-from-top" data-reveal-delay="300">
@@ -489,7 +475,7 @@
                                         ><img
                                             class="clients-size-logo"
                                             src="../advertisers/ContaboLogo.png"
-                                            alt="Powered by Contabo"
+                                            alt="Contabo提供"
                                     /></a>
                                 </li>
                             </ul>
@@ -499,7 +485,7 @@
 
                 <section id="sponsors" class="clients section">
                     <div class="container">
-                        <h2 class="mt-24 tac">Our sponsors</h2>
+                        <h2 class="mt-24 tac">私たちのスポンサー</h2>
                         <div class="clients-inner section-inner has-animations has-top-divider has-bottom-divider">
                             <ul class="list-reset">
                                 <li class="reveal-from-top" data-reveal-delay="150">
@@ -595,7 +581,7 @@
 
                 <section id="advertisers" class="clients section">
                     <div class="container">
-                        <h2 class="mt-24 tac">Our advertisers</h2>
+                        <h2 class="mt-24 tac">私たちの広告主</h2>
                         <div class="clients-inner section-inner has-animations has-top-divider has-bottom-divider">
                             <ul class="list-reset">
                                 <li class="reveal-from-top" data-reveal-delay="150">
@@ -641,7 +627,7 @@
                                                 viewBox="0 0 16 16"
                                                 xmlns="http://www.w3.org/2000/svg"
                                             >
-                                                <title>Forum</title>
+                                                <title>フォーラム</title>
                                                 <path
                                                     d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"
                                                 />
@@ -687,7 +673,7 @@
                                                 viewBox="0 0 16 16"
                                                 xmlns="http://www.w3.org/2000/svg"
                                             >
-                                                <title>Email</title>
+                                                <title>メール</title>
                                                 <path
                                                     d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
                                                     fill="#0270D7"
@@ -725,22 +711,22 @@
                             <nav class="footer-nav">
                                 <ul class="list-reset">
                                     <li>
-                                        <a href="/about">About</a>
+                                        <a href="/about">について</a>
                                     </li>
                                     <li>
-                                        <a href="/privacy">Privacy Policy</a>
+                                        <a href="/privacy">プライバシーポリシー</a>
                                     </li>
                                     <li>
                                         <a href="https://p2p.mirotalk.com/api/v1/docs/">Rest API</a>
                                     </li>
                                     <li>
                                         <a target="_blank" href="https://www.linkedin.com/in/miroslav-pejic-976a07101/"
-                                            >Contact: Miroslav Pejic</a
+                                            >連絡先: Miroslav Pejic</a
                                         >
                                     </li>
                                 </ul>
                             </nav>
-                            <div class="footer-copyright">&copy; 2025 MiroTalk, all rights reserved</div>
+                            <div class="footer-copyright">&copy; 2025 MiroTalk, 全著作権所有</div>
                         </div>
                     </div>
                 </div>
